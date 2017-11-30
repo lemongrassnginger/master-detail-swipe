@@ -20,10 +20,19 @@ sap.ui.define([
  	 * @memberof Detail
 	 */
 	onInit: function () {
-		sap.m.MessageToast.show("Hello!! :)");
-		// add pages to the carousel
+		// call base controller init
+		Controller.prototype.onInit.apply(this, arguments);
+
+		// set the pages model as the default on the view
+		var oModel = this.getOwnerComponent().getModel("pages");
+		this.oView.setModel(oModel);
+
+		// get carousel
 		var oCarousel = this.getView().byId("detail-carousel");
-		oCarousel.addPage(this.getXmlFragment("b"));
+		// get id from model
+		var sId = this.oView.getModel().getProperty("/pages")[1].id;
+		// add pages to the carousel
+		oCarousel.addPage(this.getXmlFragment(sId));
 	},
 
 	});

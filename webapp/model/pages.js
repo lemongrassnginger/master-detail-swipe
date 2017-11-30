@@ -19,6 +19,10 @@ sap.ui.define([
 					{
 						id: "test1",
 						text: "blubbblueblbublbhubebhelubhlebubluh"
+					},
+					{
+						id: "test2",
+						text: "blubbblueblbublbhubebhelubhlebubluh"
 					}
 				]
 			});
