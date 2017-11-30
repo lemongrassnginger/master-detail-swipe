@@ -20,7 +20,6 @@ sap.ui.define([
  	 * @memberof Master
 	 */
 	onInit: function () {
-		sap.m.MessageToast.show("Hello!! :)");
 	},
 
 	});

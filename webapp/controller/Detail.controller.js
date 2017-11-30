@@ -22,6 +22,7 @@ sap.ui.define([
 		onInit: function () {
 			// call base controller init
 			Controller.prototype.onInit.apply(this, arguments);
+			sap.m.MessageToast.show(R.add(1, 1));
 
 			// set the pages model as the default on the view
 			var oModel = this.getOwnerComponent().getModel("pages");

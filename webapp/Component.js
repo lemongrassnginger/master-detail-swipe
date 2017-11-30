@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel",
 	"sap/m/routing/RouteMatchedHandler",
-	"mud/4ever/model/pages"
-], function (UIComponent, JSONModel, RouteMatchedHandler, PagesModel) {
+	"mud/4ever/model/pages",
+	"mud/4ever/lib/ramda.min"
+], function (UIComponent, JSONModel, RouteMatchedHandler, PagesModel, R) {
 	"use strict";
 
 return UIComponent.extend("mud.4ever.Component", {
