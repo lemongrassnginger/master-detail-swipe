@@ -29,10 +29,15 @@ sap.ui.define([
 
 			// get carousel
 			var oCarousel = this.getView().byId("detail-carousel");
-			// get id from model
-			var sId = this.oView.getModel().getProperty("/pages")[1].id;
+			// get fragment and bind data
+			var oPageData = this.oView.getModel().getProperty("/pages")[1];
+			var oPage = this.getXmlFragment(oPageData.id);
+			// add the fragment as a dependent of the view so view model can be accessed
+			this.oView.addDependent(oPage);
+			// oPage.setBindingContext("/pages/1");
+
 			// add pages to the carousel
-			oCarousel.addPage(this.getXmlFragment(sId));
+			oCarousel.addPage(oPage);
 		}
 
 	});
