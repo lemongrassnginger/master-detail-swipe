@@ -1,0 +1,21 @@
+{
+  "generator-stui5": {
+    "bootstrap": "../../resources/sap-ui-core.js",
+    "firstViewName": "Initial",
+    "webappRoot": "webapp",
+    "baseController": true,
+    "baseControllerBody": true,
+    "formatter": true,
+    "mockServer": true,
+    "gruntfile": true,
+    "qunit": true,
+    "packageJson": true,
+    "ci": true,
+    "gitInit": true,
+    "eslint": true,
+    "appNamespace": "mud.4ever",
+    "appTitle": "Thanks!",
+    "appType": "master-detail",
+    "superControllerPath": "mud/4ever/controller/Base.controller"
+  }
+}
