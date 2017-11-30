@@ -14,7 +14,7 @@
     "gitInit": true,
     "eslint": true,
     "appNamespace": "mud.4ever",
-    "appTitle": "Thanks!",
+    "appTitle": "Bye!",
     "appType": "master-detail",
     "superControllerPath": "mud/4ever/controller/Base.controller"
   }
