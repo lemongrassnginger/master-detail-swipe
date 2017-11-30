@@ -3,6 +3,6 @@
 	xmlns:core="sap.ui.core" >
 	<Page>
 	 <Button
-		 text="hello :D"  />
+		 text="{text}"  />
 	</Page>
 </core:FragmentDefinition>
