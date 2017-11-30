@@ -21,6 +21,9 @@ sap.ui.define([
 	 */
 	onInit: function () {
 		sap.m.MessageToast.show("Hello!! :)");
+		// add pages to the carousel
+		var oCarousel = this.getView().byId("detail-carousel");
+		oCarousel.addPage(this.getXmlFragment("b"));
 	},
 
 	});

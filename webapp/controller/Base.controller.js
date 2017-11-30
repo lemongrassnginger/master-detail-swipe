@@ -11,7 +11,7 @@ sap.ui.define([
 	*/
 return Controller.extend("mud.4ever.controller.Base", {
 
-	
+
     		oBundle: null,
 		oView: null,
 		sRootNamespace: "mud.4ever",
@@ -125,8 +125,6 @@ return Controller.extend("mud.4ever.controller.Base", {
 			}
 			return this[sObjectName];
 		},
-
-  
 
 	});
 });

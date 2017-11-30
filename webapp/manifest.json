@@ -58,7 +58,7 @@
           "pattern": "",
           "name": "master",
           "target": [
-            "blank",
+            "detail",
             "master"
           ]
         },

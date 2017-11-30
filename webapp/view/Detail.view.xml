@@ -4,5 +4,8 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
 
-
+<Carousel
+	 id="detail-carousel"
+	 loop="true" >
+</Carousel>
 </mvc:View>
