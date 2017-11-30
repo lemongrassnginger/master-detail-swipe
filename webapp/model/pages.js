@@ -18,7 +18,7 @@ sap.ui.define([
 				pages: [
 					{
 						id: "test1",
-						text: "blubbblueblbublbhubebhelubhlebubluh"
+						text: "hello :D"
 					},
 					{
 						id: "test2",

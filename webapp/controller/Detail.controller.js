@@ -34,7 +34,8 @@ sap.ui.define([
 			var oPage = this.getXmlFragment(oPageData.id);
 			// add the fragment as a dependent of the view so view model can be accessed
 			this.oView.addDependent(oPage);
-			// oPage.setBindingContext("/pages/1");
+			// bind context of the page to the view model
+			oPage.bindElement({path: "/pages/0"});
 
 			// add pages to the carousel
 			oCarousel.addPage(oPage);
