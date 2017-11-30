@@ -16,18 +16,20 @@ sap.ui.define([
 
 		/**
 		* Runs on Controller "init" event
-		* @return   {[type]}
 		* @memberof Detail
 		*/
 		onInit: function () {
 			// call base controller init
 			Controller.prototype.onInit.apply(this, arguments);
+			var oPagesModel = this.getOwnerComponent().getModel("pages"),
+				sPagesPath = "/pages",
+				aPageData = oPagesModel.getProperty(sPagesPath),
+				pathForPage = R.pipe(R.toString, R.concat(sPagesPath + "/"));
 
 			// set the pages model as the default on the view
-			var oModel = this.getOwnerComponent().getModel("pages");
-			this.oView.setModel(oModel);
-			// page binding path
-			var sPageBindingPath = "/pages/1";
+			this.oView.setModel(oPagesModel);
+			// create a page for each entry in the page model and add to the carousel
+			var sPageBindingPath = pathForPage(0);
 			// get page data
 			var oPageData = this.oView.getModel().getProperty(sPageBindingPath);
 			// create page
