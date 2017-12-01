@@ -35,9 +35,7 @@ sap.ui.define([
 			// create a page from a fragment and bind data from the pages model
 			createPage = function (sFragmentName, sBindingPath) {
 				// get page ui from fragment
-				var oPage = this.getXmlFragment(sFragmentName);
-				// add the fragment as a dependent of the view so view model can be accessed
-				this.oView.addDependent(oPage);
+				var oPage = this.getNewXmlFragment(sFragmentName);
 				// bind context of the page to the view model
 				oPage.bindElement({path: sBindingPath});
 				// return the page control

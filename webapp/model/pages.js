@@ -22,7 +22,7 @@ sap.ui.define([
 						text: "Sorry you're leaving!"
 					},
 					{
-						fragmentName: "test2",
+						fragmentName: "simple-msg",
 						title: "Message to you",
 						text: "Thanks for all the fish"
 					}

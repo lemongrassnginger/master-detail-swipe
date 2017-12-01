@@ -9,9 +9,9 @@ sap.ui.define([
 	* Base controller
 	* @class Base
 	*/
-return Controller.extend("mud.4ever.controller.Base", {
+	return Controller.extend("mud.4ever.controller.Base", {
 
-    		oBundle: null,
+		oBundle: null,
 		oView: null,
 		sRootNamespace: "mud.4ever",
 
@@ -19,7 +19,7 @@ return Controller.extend("mud.4ever.controller.Base", {
 		// Lifecycle functions
 		// *******************************************
 
-		onInit : function () {
+		onInit: function () {
 			this.oView = this.getView();
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		},
@@ -28,7 +28,7 @@ return Controller.extend("mud.4ever.controller.Base", {
 		// Routing helpers
 		// *******************************************
 
-		getRouter : function () {
+		getRouter: function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 
@@ -41,7 +41,7 @@ return Controller.extend("mud.4ever.controller.Base", {
 			var oHistory = sap.ui.core.routing.History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 
-			//The history contains a previous entry
+			// The history contains a previous entry
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
 			} else {
@@ -111,6 +111,15 @@ return Controller.extend("mud.4ever.controller.Base", {
 		// Fragment helpers
 		// *******************************************
 
+		getNewXmlFragment: function (sFragmentName) {
+			// access elements on the fragment with sap.ui.core.Fragment.byId(sFragmentName, <elementId>)
+			return sap.ui.xmlfragment({
+				sId: sFragmentName,
+				fragmentName: this.sRootNamespace + ".fragments." + sFragmentName,
+				oController: this
+			});
+		},
+
 		getXmlFragment : function(sFragmentName) {
 			// access elements on the fragment with sap.ui.core.Fragment.byId(sFragmentName, <elementId>)
 			var sObjectName = "o" + sFragmentName;
@@ -130,10 +139,10 @@ return Controller.extend("mud.4ever.controller.Base", {
 		// *******************************************
 
 		/**
-		 * join arguments with a "/"
-		 * @memberof Base
-		 */
+		* join arguments with a "/"
+		* @memberof Base
+		*/
 		pathify: R.unapply(R.join("/"))
 
-});
+	});
 });
