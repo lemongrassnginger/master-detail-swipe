@@ -58,8 +58,11 @@ sap.ui.define([
 		/**/
 		onRouteMatched: function (oEvent) {
 			var oParams = oEvent.getParameters(),
-			iPageNum = oParams.arguments.pagenum;
-			sap.m.MessageToast.show(iPageNum)
+			iPageNum = oParams.arguments.pagenum,
+			oCarousel = this.oView.byId("detail-carousel");
+
+			// set the active page of the carousel by page number
+			oCarousel.setActivePage(oCarousel.getPages()[iPageNum]);
 		},
 
 	});
