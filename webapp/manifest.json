@@ -63,15 +63,15 @@
           ]
         },
         {
-          "pattern": "{item}",
-          "name": "detail",
+          "pattern": "{pagenum}",
+          "name": "page",
           "target": [
             "detail",
             "master"
           ]
         },
         {
-          "pattern": "{item}/notFound",
+          "pattern": "{pagenum}/notFound",
           "name": "notFound",
           "target": [
             "notFound",

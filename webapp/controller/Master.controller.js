@@ -24,5 +24,17 @@ sap.ui.define([
 			Controller.prototype.onInit.apply(this, arguments);
 		},
 
+		/**/
+onMasterSelect: function (oEvent) {
+		// page number from binding path: "/pages/1 => 1"
+			var getPageNumber = R.pipe(R.split("/"), R.last),
+			// selected item
+			 oItem = oEvent.getParameter("listItem"),
+			 // page num of selected item
+			iPageNum = getPageNumber(oItem.getBindingContextPath());
+			// nav to page
+			this.navTo("page", {pagenum: iPageNum});
+		},
+
 	});
 });

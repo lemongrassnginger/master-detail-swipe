@@ -5,9 +5,10 @@
 	xmlns="sap.m">
 
 	<List
-		id="master-list" 
+		id="master-list"
 		headerText=""
 		mode="SingleSelectMaster"
+		select="onMasterSelect"
 		items="{pages>/pages}" >
 		<items>
 			<ObjectListItem
