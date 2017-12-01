@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/model/json/JSONModel"
-], function(JSONModel) {
+], function (JSONModel) {
 	"use strict";
 
 	/**
@@ -13,16 +13,18 @@ sap.ui.define([
 		* @return   {[type]}
 		* @memberof pages
 		*/
-		createPagesModel: function() {
+		createPagesModel: function () {
 			return new JSONModel({
 				pages: [
 					{
-						fragmentName: "test1",
-						text: "hello :D"
+						fragmentName: "simple-msg",
+						title: "Message from me",
+						text: "Sorry you're leaving!"
 					},
 					{
 						fragmentName: "test2",
-						text: "blubbblueblbublbhubebhelubhlebubluh"
+						title: "Message to you",
+						text: "Thanks for all the fish"
 					}
 				]
 			});

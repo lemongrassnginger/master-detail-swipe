@@ -6,6 +6,8 @@
 
 <Carousel
 	 id="detail-carousel"
-	 loop="true" >
+	 pageIndicatorPlacement="Bottom"
+	 arrowsPlacement="PageIndicator"
+	 loop="false" >
 </Carousel>
 </mvc:View>

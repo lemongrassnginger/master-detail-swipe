@@ -16,18 +16,22 @@ sap.ui.define([
 
 		/**
 		* Runs on Controller "init" event
+		* Sets pages model as view model
+		* Creates carousel pages from fragments and pages model data
 		* @memberof Detail
 		*/
 		onInit: function () {
 			// call base controller init
 			Controller.prototype.onInit.apply(this, arguments);
+			// vars...
 			var oPagesModel = this.getOwnerComponent().getModel("pages"),
 			sPagesPath = "/pages",
 			aPageData = oPagesModel.getProperty(sPagesPath),
-			// combine index and pages path like: 1 => "/pages/1"
-			pathForPage = R.pipe(R.toString, R.concat(sPagesPath + "/")),
 			// carousel control
 			oCarousel = this.getView().byId("detail-carousel"),
+			// ...and fns...
+			// combine index and pages path like: 1 => "/pages/1"
+			pathForPage = R.pipe(R.toString, R.concat(sPagesPath + "/")),
 			// create a page from a fragment and bind data from the pages model
 			createPage = function (sFragmentName, sBindingPath) {
 				// get page ui from fragment
@@ -38,6 +42,7 @@ sap.ui.define([
 				oPage.bindElement({path: sBindingPath});
 				// return the page control
 				return oPage;
+				// bind this controller so getXmlFragment can be acccessed
 			}.bind(this);
 
 			// set the pages model as the default on the view
