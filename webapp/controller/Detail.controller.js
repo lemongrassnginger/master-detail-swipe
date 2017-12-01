@@ -50,6 +50,16 @@ sap.ui.define([
 			aPageData.forEach((x, i) => oCarousel.addPage(
 				createPage(x.fragmentName, pathForPage(i))
 			));
+
+			// routing handler
+			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
+		},
+
+		/**/
+		onRouteMatched: function (oEvent) {
+			var oParams = oEvent.getParameters(),
+			iPageNum = oParams.arguments.pagenum;
+			sap.m.MessageToast.show(iPageNum)
 		},
 
 	});
