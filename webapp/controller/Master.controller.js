@@ -22,35 +22,9 @@ sap.ui.define([
 		onInit: function () {
 			// call base controller init
 			Controller.prototype.onInit.apply(this, arguments);
-
-			// attachRouteMatched
-			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
 		},
 
-		/**
-		* route matched
-		* set selected item based on routing page num
-		* @param    {[type]} oEvent
-		* @memberof Master
-		*/
-		onRouteMatched: function (oEvent) {
-			var oParams = oEvent.getParameters(),
-			// page numb param from routing
-			iPageNum = oParams.arguments.pagenum,
-			// master list control
-			oList = this.oView.byId("master-list"),
-			// target item based on page number id 
-			oTargetItem = oList.getItems()[iPageNum];
-
-			// select the target item #
-			oList.setSelectedItem(oTargetItem);
-		},
-
-		/**
-		* handelr for master list selection chagne
-		* @param    {[type]} oEvent
-		* @memberof Master
-		*/
+		/**/
 		onMasterSelect: function (oEvent) {
 			// selected item
 			var oItem = oEvent.getParameter("listItem"),
