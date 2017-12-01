@@ -22,22 +22,37 @@ sap.ui.define([
 			// call base controller init
 			Controller.prototype.onInit.apply(this, arguments);
 			var oPagesModel = this.getOwnerComponent().getModel("pages"),
-				sPagesPath = "/pages",
-				aPageData = oPagesModel.getProperty(sPagesPath),
-				pathForPage = R.pipe(R.toString, R.concat(sPagesPath + "/"));
+			sPagesPath = "/pages",
+			aPageData = oPagesModel.getProperty(sPagesPath),
+			pathForPage = R.pipe(R.toString, R.concat(sPagesPath + "/")),
+			// return the fragment name and the path for an object in array of page data
+			paramsForPage = (x, i) => [x.fragmentName, pathForPage(i)],
+			createPage = function ([sFragmentName, sBindingPath]) {
+				// get page ui from fragment
+				var oPage = this.getXmlFragment(sFragmentName);
+				// add the fragment as a dependent of the view so view model can be accessed
+				this.oView.addDependent(oPage);
+				// bind context of the page to the view model
+				oPage.bindElement({path: sBindingPath});
+				// return the page control
+				return oPage;
+			}.bind(this),
+			oCarousel = this.getView().byId("detail-carousel");
 
 			// set the pages model as the default on the view
 			this.oView.setModel(oPagesModel);
+
+			// create a page for each entry in pages model and add to carousel
+			aPageData.forEach((x, i) => oCarousel.addPage(createPage(paramsForPage(x, i))));
+			// aPageData[0].fragment
 			// create a page for each entry in the page model and add to the carousel
-			var sPageBindingPath = pathForPage(0);
+			// var sPageBindingPath = pathForPage(0);
 			// get page data
-			var oPageData = this.oView.getModel().getProperty(sPageBindingPath);
+			// var oPageData = this.oView.getModel().getProperty(sPageBindingPath);
 			// create page
-			var oPage = this.createPage(oPageData.id, sPageBindingPath);
-			// get carousel
-			var oCarousel = this.getView().byId("detail-carousel");
+			// var oPage = this.createPage(oPageData.id, sPageBindingPath);
 			// add pages to the carousel
-			oCarousel.addPage(oPage);
+			// oCarousel.addPage(oPage);
 		},
 
 		// ********************************************************* //
@@ -45,13 +60,14 @@ sap.ui.define([
 		// ******************************************************* //
 
 		/**
-		 * Creates a page control from a fragment and binds the view model
-		 * @param    {string} sFragmentName
-		 * @param    {string} sBindingPath
-		 * @return   {sap.m.Page}
-		 * @memberof Detail
-		 */
-		createPage: function (sFragmentName, sBindingPath) {
+		* Creates a page control from a fragment and binds the view model
+		* @param    {string} sFragmentName
+		* @param    {string} sBindingPath
+		* @return   {sap.m.Page}
+		* @memberof Detail
+		*/
+
+		createPage: function ([sFragmentName, sBindingPath]) {
 			// get page ui from fragment
 			var oPage = this.getXmlFragment(sFragmentName);
 			// add the fragment as a dependent of the view so view model can be accessed

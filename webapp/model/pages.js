@@ -17,11 +17,11 @@ sap.ui.define([
 			return new JSONModel({
 				pages: [
 					{
-						id: "test1",
+						fragmentName: "test1",
 						text: "hello :D"
 					},
 					{
-						id: "test2",
+						fragmentName: "test2",
 						text: "blubbblueblbublbhubebhelubhlebubluh"
 					}
 				]
