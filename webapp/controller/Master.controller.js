@@ -10,17 +10,19 @@ sap.ui.define([
 	*/
 	return Controller.extend("mud.4ever.controller.Master", {
 
-	// ********************************************************* //
-	// lifecycle
-	// ******************************************************* //
+		// ********************************************************* //
+		// lifecycle
+		// ******************************************************* //
 
-	/**
-	 * Runs on Controller "init" event
-	 * @return   {[type]}
- 	 * @memberof Master
-	 */
-	onInit: function () {
-	},
+		/**
+		* Runs on Controller "init" event
+		* @return   {[type]}
+		* @memberof Master
+		*/
+		onInit: function () {
+			// call base controller init
+			Controller.prototype.onInit.apply(this, arguments);
+		},
 
 	});
 });

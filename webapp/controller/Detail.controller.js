@@ -50,7 +50,6 @@ sap.ui.define([
 			aPageData.forEach((x, i) => oCarousel.addPage(
 				createPage(x.fragmentName, pathForPage(i))
 			));
-
 		},
 
 	});

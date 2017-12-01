@@ -13,6 +13,7 @@ sap.ui.define([
 
 		oBundle: null,
 		oView: null,
+		oRouter: null,
 		sRootNamespace: "mud.4ever",
 
 		// *******************************************

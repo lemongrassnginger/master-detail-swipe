@@ -5,6 +5,7 @@
 	xmlns="sap.m">
 
 	<List
+		id="master-list" 
 		headerText=""
 		mode="SingleSelectMaster"
 		items="{pages>/pages}" >
