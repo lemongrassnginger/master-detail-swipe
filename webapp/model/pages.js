@@ -10,7 +10,6 @@ sap.ui.define([
 
 		/**
 		* Initialise pages model
-		* @return   {[type]}
 		* @memberof pages
 		*/
 		createPagesModel: function () {

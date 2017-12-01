@@ -1,8 +1,0 @@
-<mvc:View id="NotFound"
-	controllerName="mud.4ever.controller.NotFound"
-	displayBlock="true"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m">
-
-
-</mvc:View>

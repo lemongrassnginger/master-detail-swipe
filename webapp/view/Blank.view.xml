@@ -1,8 +1,0 @@
-<mvc:View id="Blank"
-	controllerName="mud.4ever.controller.Blank"
-	displayBlock="true"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m">
-
-
-</mvc:View>
