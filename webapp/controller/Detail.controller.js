@@ -55,7 +55,36 @@ sap.ui.define([
 			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
 		},
 
-		/**/
+		/**
+		 * set the routing path to the page number of the new page
+		 * carousel only provides the id of the active page, not the index which makes it a bit fiddly
+		 * @memberof Detail
+		 */
+		onCarouselPageChanged: function (oEvent) {
+			// get the page number from the binding path of the active page control
+			var oCarousel = this.oView.byId("detail-carousel"),
+			// page controls
+			aPages = oCarousel.getPages(),
+			// control Id of active page
+			sPageControlId = oEvent.getParameter("newActivePageId"),
+			// active page control
+			oActivePage = R.find(R.propEq("sId", sPageControlId), aPages),
+			// binding path of page control like: "/pages/1"
+			sPagePath = oActivePage.getBindingContext().getPath(),
+			// page number from end of binding path
+			sPageNum = this.getPageNumber(sPagePath);
+
+			// nav to page
+			this.navTo("page", {pagenum: sPageNum});
+		},
+
+		/**
+		 * route matched handler
+		 * Sets carousel page based on route pagenu
+		 * @param    {[type]} oEvent
+		 * @return   {[type]}
+		 * @memberof
+		 */
 		onRouteMatched: function (oEvent) {
 			var oParams = oEvent.getParameters(),
 			iPageNum = oParams.arguments.pagenum,

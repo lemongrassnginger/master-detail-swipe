@@ -112,12 +112,12 @@ sap.ui.define([
 		// Fragment helpers
 		// *******************************************
 		/**
-		 * Creates a new control from a fragment.
-		 * If you want to just reuse a fragment without recreating it, see getXmlFragment
-		 * @param    {[type]} sFragmentName
-		 * @return   New controls from fragment
-		 * @memberof Base
-		 */
+		* Creates a new control from a fragment.
+		* If you want to just reuse a fragment without recreating it, see getXmlFragment
+		* @param    {[type]} sFragmentName
+		* @return   New controls from fragment
+		* @memberof Base
+		*/
 		getNewXmlFragment: function (sFragmentName) {
 			// access elements on the fragment with sap.ui.core.Fragment.byId(sFragmentName, <elementId>)
 			return sap.ui.xmlfragment({
@@ -146,10 +146,10 @@ sap.ui.define([
 		// *******************************************
 
 		/**
-		* join arguments with a "/"
+		* page number from binding path: "/pages/1 => 1"
 		* @memberof Base
 		*/
-		pathify: R.unapply(R.join("/"))
+		getPageNumber: R.pipe(R.split("/"), R.last)
 
 	});
 });
