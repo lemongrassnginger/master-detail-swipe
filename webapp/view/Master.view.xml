@@ -4,5 +4,13 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
 
+<List
+	
+	 items="{pages>/pages}" >
+ <items>
+	<ObjectListItem
+		 title="{pages>title}" />
+ </items>
+</List>
 
 </mvc:View>

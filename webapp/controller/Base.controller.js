@@ -110,7 +110,13 @@ sap.ui.define([
 		// *******************************************
 		// Fragment helpers
 		// *******************************************
-
+		/**
+		 * Creates a new control from a fragment.
+		 * If you want to just reuse a fragment without recreating it, see getXmlFragment
+		 * @param    {[type]} sFragmentName
+		 * @return   New controls from fragment
+		 * @memberof Base
+		 */
 		getNewXmlFragment: function (sFragmentName) {
 			// access elements on the fragment with sap.ui.core.Fragment.byId(sFragmentName, <elementId>)
 			return sap.ui.xmlfragment({
