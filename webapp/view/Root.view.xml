@@ -2,5 +2,5 @@
 	displayBlock="true"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
-	<SplitApp id="app" mode="PopoverMode" />
+	<SplitApp id="app" mode="{device>/splitAppMode}" />
 </mvc:View>

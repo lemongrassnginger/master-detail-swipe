@@ -21,7 +21,7 @@ return UIComponent.extend("mud.4ever.Component", {
 			var oDeviceModel = new JSONModel({
 				isPhone : bIsPhone,
 				isNoPhone : !bIsPhone,
-				listMode : bIsPhone ? "None" : "SingleSelectMaster",
+				splitAppMode : bIsPhone ? "Hide" : "ShowHideMode",
 				listItemType : bIsPhone ? "Active" : "Inactive"
 			});
 			oDeviceModel.setDefaultBindingMode("OneWay");
